@@ -22,6 +22,11 @@ function Banner() {
   );
 }
 
+// en utilisant la props children
+// function Banner({ children }) {
+//   return <div className="lmj-banner">{children}</div>;
+// }
+
 /* ----------------------------------------- */
 /*            Section des exports            */
 /* ----------------------------------------- */

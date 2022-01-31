@@ -8,17 +8,34 @@ import { plantList } from "../datas/plantList";
 // on importe le fichier de style
 import "../styles/ShoppingList.css";
 
+// on importe le copmposant pour l'ensoleillement
+import PlantItem from "./PlantItem";
+
 /* ------------------------------------------- */
 /*            Création du composant            */
 /* ------------------------------------------- */
 
 // grace à la méthode map on retourne une li pour chaque élément du array
 // on ajoute un affichage en fontion d'une condition pour les meilleures ventes
-const plantListElements = plantList.map((plant) => (
-  <li key={plant.id} className="lmj-plant-item">
-    {plant.name}
-    {plant.isSpecialOffer && <div className="lmj-sales">Soldes</div>}
-  </li>
+//  ajout du composant pour l'ensoleillement et l'arrosage (c'est le même)
+// const plantListElements = plantList.map((plant) => (
+//   <li key={plant.id} className="lmj-plant-item">
+//     {plant.name}
+//     {plant.isBestSale && <div className="lmj-sales">Soldes</div>}
+//     <CareScale careType="water" scaleValue={plant.water} />
+//     <CareScale careType="light" scaleValue={plant.light} />
+//   </li>
+// ));
+
+// on utilise un composant plantItem pour générer la liste de plante
+const plantListElements = plantList.map(( plant ) => (
+  <PlantItem
+    key={plant.id}
+    name={plant.name}
+    cover={plant.cover}
+    light={plant.light}
+    water={plant.water}
+  />
 ));
 
 // on créer une liste de catégorie vide

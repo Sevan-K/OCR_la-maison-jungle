@@ -10,8 +10,13 @@ function App() {
   return (
     <div className="lmj-app-wrapper">
       <Banner />
+      {/* si on voulait utiliser des children */}
+      {/* <Banner>
+        <img src={logo} alt="La maison jungle" />
+        <h1 className="lmj-title">La maison jungle</h1>
+      </Banner> */}
       <Cart />
-      <ShoppingList/>
+      <ShoppingList />
     </div>
   );
 }
