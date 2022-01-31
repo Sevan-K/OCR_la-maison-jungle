@@ -2,11 +2,14 @@
 /*            Section des imports            */
 /* ----------------------------------------- */
 
+// on importe le fichier de style pour ce composant
+// import "../styles/Banner.css";
+
 // on importe la variable contenant les informations sur les plantes
 import { plantList } from "../datas/plantList";
 
-// on importe le fichier de style
-import "../styles/ShoppingList.css";
+// on importe le fichier de style 
+import "../styles/ShoppingList.css"
 
 /* ------------------------------------------- */
 /*            Création du composant            */
@@ -14,12 +17,26 @@ import "../styles/ShoppingList.css";
 
 // grace à la méthode map on retourne une li pour chaque élément du array
 // on ajoute un affichage en fontion d'une condition pour les meilleures ventes
+// la notation && n'affichera l'emoji que si la condition est vérifiée
+// c'est mieux que le code ci-dessous
+// plant.isBestSale ? <span>🔥</span> : null
 const plantListElements = plantList.map((plant) => (
   <li key={plant.id} className="lmj-plant-item">
     {plant.name}
     {plant.isSpecialOffer && <div className="lmj-sales">Soldes</div>}
   </li>
 ));
+// console.log(
+//   "Tableau avec la liste des plante sous la forme d'éléments",
+//   plantListElements
+// );
+
+// autre manière de créer une liste sans doublon
+// const categories = plantList.reduce(
+//     (acc, plant) =>
+//         acc.includes(plant.category) ? acc : acc.concat(plant.category),
+//     []
+// )
 
 // on créer une liste de catégorie vide
 let categoryList = [];
