@@ -14,6 +14,19 @@ import PlantItem from "./PlantItem";
 /* ------------------------------------------- */
 /*            Création du composant            */
 /* ------------------------------------------- */
+
+// grace à la méthode map on retourne une li pour chaque élément du array
+// on ajoute un affichage en fontion d'une condition pour les meilleures ventes
+//  ajout du composant pour l'ensoleillement et l'arrosage (c'est le même)
+// const plantListElements = plantList.map((plant) => (
+//   <li key={plant.id} className="lmj-plant-item">
+//     {plant.name}
+//     {plant.isBestSale && <div className="lmj-sales">Soldes</div>}
+//     <CareScale careType="water" scaleValue={plant.water} />
+//     <CareScale careType="light" scaleValue={plant.light} />
+//   </li>
+// ));
+
 // on utilise un composant plantItem pour générer la liste de plante
 const plantListElements = plantList.map((plant) => (
   <PlantItem

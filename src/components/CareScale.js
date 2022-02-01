@@ -1,7 +1,26 @@
+
+/* ----------------------------------------- */
+/*            Section des imports            */
+/* ----------------------------------------- */
 // on importe le soleil
 import sun from "../assets/sun.svg";
+// on importe la goutte d'eau
 import water from "../assets/water.svg";
 
+
+/* -------------------------------------------- */
+/*            Gestion des évenements            */
+/* -------------------------------------------- */
+// fonction pour gérer le click
+function handleClickOnCareScale(type, value) {
+  const careOfType = type === "light" ? "de lumière" : "d'arrosage";
+  const careIntensity = {1:"peu", 2:"modérement", 3:"beaucoup"};
+  alert(`cette plante requiert ${careIntensity[value]} ${careOfType}`);
+}
+
+/* ------------------------------------------- */
+/*            Création du composant            */
+/* ------------------------------------------- */
 // création du composant
 function CareScale({ scaleValue, careType }) {
   //   const { scaleValue, careType } = props;
@@ -24,11 +43,10 @@ function CareScale({ scaleValue, careType }) {
     ) : (
       <img src={water} alt="iconne d'une goutte" />
     );
-
   //   méthode du cours basée sur une échelle manuelle et la méthode map
   const range = [1, 2, 3];
   return (
-    <div>
+    <div onClick={() => handleClickOnCareScale(careType, scaleValue)}>
       {range.map((rangeElement) =>
         scaleValue >= rangeElement ? (
           <span key={rangeElement.toString()}>{scaleType}</span>
@@ -37,5 +55,9 @@ function CareScale({ scaleValue, careType }) {
     </div>
   );
 }
+
+/* ----------------------------------------- */
+/*            Section des exports            */
+/* ----------------------------------------- */
 // on exporte le composant
 export default CareScale;
