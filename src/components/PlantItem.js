@@ -24,29 +24,24 @@ function handleClick(event) {
 /* ------------------------------------------- */
 
 // création du composant PlantItem
-function PlantItem({ name, cover, light, water }) {
+function PlantItem({ name, cover, light, water, price }) {
   // on déclare l'évenement à attendre et lui passe la fonction à appeler
   // si on  veut passer un argument à la fonction du cloick on écrit :
   // {()=>handleClick(name)}
   return (
     <li className="lmj-plant-item">
-      <p>
+      <span className="lmj-plant-price">{price}€</span>
+      <span>
         <img
           src={cover}
           className="lmj-plant-item-cover"
           alt={"Photo d'une plante : " + name}
         />
-      </p>
+      </span>
       {name}
       {/* {plant.isBestSale && <div className="lmj-sales">Soldes</div>} */}
-      <CareScale
-        careType="water"
-        scaleValue={water}
-      />
-      <CareScale
-        careType="light"
-        scaleValue={light}
-      />
+      <CareScale careType="water" scaleValue={water} />
+      <CareScale careType="light" scaleValue={light} />
       <div className="test">
         <div className="test__loader"></div>
       </div>

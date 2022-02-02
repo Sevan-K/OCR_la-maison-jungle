@@ -62,6 +62,7 @@ function ShoppingList({ cart, updateCart }) {
             cover={plant.cover}
             light={plant.light}
             water={plant.water}
+            price={plant.price}
           />
           <button onClick={() => addToCart(plant.name, plant.price)}>
             Ajouter

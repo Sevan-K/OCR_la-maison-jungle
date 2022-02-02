@@ -4,8 +4,8 @@
 // on importe le fichier de style pour ce composant
 import "../styles/Cart.css";
 
-// on importe useState
-import { useState } from "react";
+// on importe useState et useEffect
+import  { useState, useEffect } from "react";
 
 /* ------------------------------------------- */
 /*            Création du composant            */
@@ -26,6 +26,16 @@ function Cart({ cart, updateCart }) {
     (acc, plantType) => acc + plantType.quantity * plantType.price,
     0
   );
+
+  // function to handle click
+  function handleClick(name) {
+    updateCart(cart.filter((item) => item.name !== name));
+  }
+
+  //  on déclare le useEffect
+  useEffect(()=>{document.title=`LMJ 🌱 : ${total}€ d'achat`},[total])
+
+  // return avec le coeur du composant
   return isOpen ? (
     <div className="lmj-cart">
       <button
@@ -37,7 +47,15 @@ function Cart({ cart, updateCart }) {
       <h2>Panier</h2>
       {cart.map(({ name, price, quantity }, index) => (
         <li key={`${name}_${index}`}>
-          {name} {price}€ x {quantity}
+          <span>
+            {name} {price}€ x {quantity}
+          </span>
+          <button
+            className="lmj-cart-toggle-button lmj-cart-delete-button"
+            onClick={() => handleClick(name)}
+          >
+            Retirer
+          </button>
         </li>
       ))}
       <h3>Total :{total}€</h3>
