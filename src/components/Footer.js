@@ -24,7 +24,7 @@ const Footer = () => {
         Pour les passonné.e.s de plantes 🌿🌱🌵
       </div>
       <div className="lmj-footer-elem">
-        <label for="email"> Laissez nous votre mail :</label>
+        <label htmlFor="email"> Laissez nous votre mail :</label>
         <input
           type="email"
           id="email"

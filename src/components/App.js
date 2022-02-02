@@ -11,16 +11,20 @@ import ShoppingList from "./ShoppingList";
 import Footer from "./Footer";
 
 // import du style pour le layout
-import "../styles/layout.css"
+import "../styles/layout.css";
+import { useState } from "react";
 
 // on créer le composant principal App
+// on fait remonter cart et update cart dans app.js
 function App() {
+  // on déclare le state cart
+  const [cart, updateCart] = useState([]);
   return (
     <div className="lmj-app-wrapper">
       <Banner />
       <main className="lmj-layout-inner">
-        <Cart />
-        <ShoppingList />
+        <Cart cart={cart} updateCart={updateCart} />
+        <ShoppingList cart={cart} updateCart={updateCart} />
       </main>
 
       <Footer />
