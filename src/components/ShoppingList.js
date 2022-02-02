@@ -42,11 +42,11 @@ function ShoppingList() {
   // les deux sont wrapper dans une div
   return (
     <div>
-      <ul>
+      {/* <ul>
         {categoryList.map((category) => (
           <li key={category}>{category}</li>
         ))}
-      </ul>
+      </ul> */}
       <ul className="lmj-plant-list">{plantListElements}</ul>
     </div>
   );

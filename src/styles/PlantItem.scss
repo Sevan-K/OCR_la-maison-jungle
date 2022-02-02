@@ -2,6 +2,7 @@
   height: 220px;
   width: 220px;
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .lmj-plant-item {
@@ -11,13 +12,4 @@
   justify-content: center;
   flex-direction: column;
   text-transform: capitalize;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

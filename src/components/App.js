@@ -10,13 +10,19 @@ import ShoppingList from "./ShoppingList";
 // import du composant Footer
 import Footer from "./Footer";
 
+// import du style pour le layout
+import "../styles/layout.css"
+
 // on créer le composant principal App
 function App() {
   return (
     <div className="lmj-app-wrapper">
       <Banner />
-      <Cart />
-      <ShoppingList />
+      <main className="lmj-layout-inner">
+        <Cart />
+        <ShoppingList />
+      </main>
+
       <Footer />
     </div>
   );
