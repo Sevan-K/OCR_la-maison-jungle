@@ -5,19 +5,13 @@
 import "../styles/Cart.css";
 
 // on importe useState et useEffect
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 /* ------------------------------------------- */
 /*            Création du composant            */
 /* ------------------------------------------- */
 // Création du composant Cart
 function Cart({ cart, updateCart }) {
-  //  prix des plantes
-  // const monsteraPrice = 8;
-  // const ivyPrice = 10;
-  // const flowerPrice = 15;
-  // déclaration du state cart
-  // const [cart, updateCart] = useState(0);
   // déclaration du state isOpen
   const [isOpen, setIsOpen] = useState(true);
 
@@ -33,7 +27,9 @@ function Cart({ cart, updateCart }) {
   }
 
   //  on déclare le useEffect
-  useEffect(()=>{document.title=`LMJ 🌱 : ${total}€ d'achat`},[total])
+  useEffect(() => {
+    document.title = `LMJ 🌱 : ${total}€ d'achat`;
+  }, [total]);
 
   // return avec le coeur du composant
   return isOpen ? (
