@@ -18,6 +18,29 @@ const Footer = () => {
       alert("Attention, il n'y a pas d'@, ceci n'est pas une adresse valide.");
     }
   }
+
+  // use effect qui se déclanche à chaque rendu du footer
+  // useEffect(() => {
+  //   console.log("1️⃣ Alerte à chaque render du footer");
+  // });
+
+  // alerte avec un tableau de dépendance vide (uniquement au premier rendu)
+  // useEffect(() => {
+  //   console.log("2️⃣ Cette alerte s'affiche au premier rendu du footer");
+  // }, []);
+
+  // alerte s'affichant au premier rendu mai également dès que cart est modifié
+  // useEffect(() => {
+  //   console.log(
+  //     "3️⃣ Cette alerte s'affiche au premier rendu du footer et dès que cart est modifié"
+  //   );
+  // }, [cart]);
+  //  alerte qui s'affiche quand on retire le composant
+  // useEffect(() => {
+  //   return () =>
+  //     console.log("4️⃣ Cette alerte s'affiche quand le footer est retiré");
+  // });
+
   return (
     <footer className="lmj-footer">
       <div className="lmj-footer-elem">

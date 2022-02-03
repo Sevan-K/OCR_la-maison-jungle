@@ -39,7 +39,7 @@ function ShoppingList({ cart, updateCart }) {
   // fonction pour ajouter au panier
   function addToCart(name, price) {
     const plantToAdd = cart.find((item) => item.name === name);
-    console.log(plantToAdd);
+    // console.log(plantToAdd);
     if (plantToAdd) {
       const cartFilteredPlantToAdd = cart.filter((item) => item.name !== name);
       updateCart([

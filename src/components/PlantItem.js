@@ -11,13 +11,13 @@ import "../styles/PlantItem.css";
 /*            Gestion des évenements            */
 /* -------------------------------------------- */
 // on déclare la fonction liée à l'évenement en camelCase
-function handleClick(event) {
+// function handleClick(event) {
   // alert(`Vous voulez acheter 1 ${plantName} ? Très bon choix 🌱✨`);
   // on peut utiliser les fonctions suivantes
   // event.stopPropagation();
   // event.preventDefault();
-  console.log("Ceci est mon évènement :", event);
-}
+//   console.log("Ceci est mon évènement :", event);
+// }
 
 /* ------------------------------------------- */
 /*            Création du composant            */
@@ -42,9 +42,9 @@ function PlantItem({ name, cover, light, water, price }) {
       {/* {plant.isBestSale && <div className="lmj-sales">Soldes</div>} */}
       <CareScale careType="water" scaleValue={water} />
       <CareScale careType="light" scaleValue={light} />
-      <div className="test">
+      {/* <div className="test">
         <div className="test__loader"></div>
-      </div>
+      </div> */}
     </li>
   );
 }
